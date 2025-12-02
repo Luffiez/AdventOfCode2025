@@ -1,4 +1,4 @@
 - [Day 1](https://adventofcode.com/2025/day/1)
-  - [Part 1](https://github.com/Luffiez/AdventOfCode2025/blob/master/AdventOfCode2025/Days/Day1.cs)
+  - [Part 1 & 2](https://github.com/Luffiez/AdventOfCode2025/blob/master/AdventOfCode2025/Days/Day1.cs)
 - [Day 2](https://adventofcode.com/2025/day/2)
   - [Part 1](https://github.com/Luffiez/AdventOfCode2025/blob/master/AdventOfCode2025/Days/Day2.cs)
