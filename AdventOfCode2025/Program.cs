@@ -50,6 +50,7 @@ Day ParseDayInput(int day)
     switch (day)
     {
         case 1: return new Day1();
+        case 2: return new Day2();
         default: return null;
     }
 }

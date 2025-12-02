@@ -10,22 +10,45 @@
     public override void Run()
     {
         int current = 50;
-        int password = 0;
+        int part1 = 0;
+        int part2 = 0;
+
         for (int i = 0; i < input.Length; i++)
         {
             int value = GetValue(input[i]);
-            current += value;    
+            current += value;
+            bool clicked = false;
 
             while (current < minValue)
-                current = (maxValue + 1) + current; 
+            {
+                current = (maxValue + 1) + current;
+                if (!clicked && current == 0)
+                {
+                    clicked = true;
+                    part2++;
+                }
+            }
 
             while (current > maxValue)
+            {
                 current = current - (maxValue + 1);
+                if (!clicked && current == 0)
+                {
+                    clicked = true;
+                    part2++;
+                }
+            }
+
 
             if (current == 0)
-                password++;
+            {
+                part1++;
+                if (!clicked)
+                    part2++;
+            }
         }
-        result = "Password: " + password;
+        part2 += part1;
+        result = "Part1: " + part1 + ", Part2: " + part2;
     }
 
     int GetValue(string v)
