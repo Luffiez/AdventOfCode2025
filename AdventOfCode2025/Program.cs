@@ -1,4 +1,8 @@
-﻿using System.Drawing;
+﻿Day[] completedDays =
+[
+    new Day1(),
+    new Day2()
+];
 
 ConsoleHelper.WriteColoredText("Advent of Code 2025", ConsoleColor.Green);
 Console.WriteLine("By Erik Rodriguez");
@@ -19,8 +23,8 @@ else
         day = ReadDayInput();
 }
 
-
-Day targetDay = ParseDayInput(day);
+// reduce by one since the array starts at 0
+Day targetDay = completedDays[day - 1];
 if (targetDay == null)
 {
     Console.WriteLine($"Error fetching day {day}");
@@ -33,7 +37,7 @@ Console.Read();
 
 int ReadDayInput()
 {
-    Console.WriteLine("What day would you like to run? (1-12)");
+    Console.WriteLine($"What day would you like to run? (1-{completedDays.Length})");
     string? input = Console.ReadLine();
     if (input == null || input.Length == 0 ||
         !int.TryParse(input, out day) || day < 1 || day > 12)
@@ -42,15 +46,6 @@ int ReadDayInput()
         return ReadDayInput();
     }
 
-    return day;
-}
 
-Day ParseDayInput(int day)
-{
-    switch (day)
-    {
-        case 1: return new Day1();
-        case 2: return new Day2();
-        default: return null;
-    }
+    return day;
 }
